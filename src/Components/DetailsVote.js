@@ -75,6 +75,7 @@ class DetailsVote extends Component{
         .then(response => {
 
         })
+        console.log(event.target.id)
         event.preventDefault();
       }
 
@@ -101,12 +102,12 @@ class DetailsVote extends Component{
                     {items.map(item => (
                       
                         <div className="col-md-3 mb-4">
-                          <Button onClick={this.handleSubmit} vote={item.vote_count} id={item.index}>
-                            <span>
-                            {item.name}
+                          <Button onClick={this.handleSubmit} >
+                            <span id={item.index}>
+                            {item.name} 
                             </span>
-                            <i className="fa fa-paper-plane"></i>
                           </Button> 
+                          {item.vote_count}
                         </div>
 
                       ))}
